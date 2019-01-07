@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>觀星地點</title>
+    <style type="text/CSS">
+        p{
+        text-align: center;
+    }
+    div{
+        text-align: center;
+    }
+    </style>
+    <script type="text/javascript">
+        var i = 0;
+        function Click() {
+            if (document.getElementById("觀星地點").value != "觀星地點") {
+                if (i == 0) {
+                    var node = document.createElement("iframe");
+                    var div = document.createElement("div");
+                    document.getElementById("p").removeChild(document.getElementById("pic"));
+                    div.setAttribute("id","d");
+                    node.setAttribute("id", "map");
+                    node.setAttribute("width", "75%");
+                    node.setAttribute("height", "500px");
+                    node.setAttribute("frameborder", "0");
+                    node.setAttribute("src", "http://maps.google.com.tw/maps?f=q&hl=zh-TW&geocode=&q=" + document.getElementById("觀星地點").value + "&z=16&output=embed&t=");
+                    node.setAttribute("style", "border:0");
+                    node.setAttribute("allowfullscreen", "true");
+                    document.getElementById("B").appendChild(div);
+                    document.getElementById("d").appendChild(node);
+                    i = 1;
+                }
+                if (i == 1) {
+                    document.getElementById("map").setAttribute("src","http://maps.google.com.tw/maps?f=q&hl=zh-TW&geocode=&q=" + document.getElementById("觀星地點").value + "&z=16&output=embed&t=");
+                }  
+            }
+        }
+        window.addEventListener("load", start, false);
+    </script>
+</head>
+
+<body id="B">
+    <p>
+        <label>最佳觀星地點:
+            <select id="觀星地點" onclick="Click()">
+                <option selected>觀星地點</option>
+                <option>五分山砲台</option>
+                <option>北橫羅浮橋</option>
+                <option>五峰白蘭部落</option>
+                <option>明德水庫</option>
+                <option>福壽山天池達觀亭</option>
+                <option>合歡山翠峰</option>
+                <option>松柏嶺天璇碉堡</option>
+                <option>古坑華山</option>
+                <option>塔塔加</option>
+                <option>鹿耳門溪口</option>
+                <option>田寮月世界</option>
+                <option>大漢林道</option>
+                <option>台東海岸伽路蘭</option>
+                <option>花蓮光復大農大富森林</option>
+                <option>南澳溪神秘海灘</option>
+            </select>
+        </label>
+    </p>
+    <p id="p"><img src="地點.gif" id="pic"></p>
+</body>
+</html>

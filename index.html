@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>00657143_00657138</title>
+    <style type="text/CSS">
+        *{
+                box-sizing: border-box;
+            }
+            h1{
+              color:purple;
+              text-align: center;
+              font-family: Franklin Gothic;  
+            }
+            nav{
+                color:white;
+                background-color:rebeccapurple;
+                border: 2px solid rebeccapurple;
+                width: 20%;
+                text-align: center;
+                float: left;
+                font-weight: bold;
+            }
+            nav ul{
+                display: none;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+            nav:hover ul{
+                display: block;
+            }
+            nav ul li{
+                background-color: white;
+                border-top: 2px solid purple;
+                color:purple;
+            }
+            nav ul li:hover { background-color: PowderBlue; }
+            a               { text-decoration: none;
+                              color:white;}
+            li a{
+                text-decoration: none;
+                color:purple;}
+            body{font-family: Perpetua}
+    </style>
+    <script type="text/javascript">
+        function doClick(op) {
+            iframe = document.getElementById("iframe");
+            if (op == "sp") {
+                iframe.setAttribute("src", "春.html");
+            }else if(op == "sum") {
+                iframe.setAttribute("src", "夏.html");
+            }else if(op == "aut") {
+                iframe.setAttribute("src", "秋.html");
+            }else if(op == "win") {
+                iframe.setAttribute("src", "冬.html");
+            }
+            else{
+                iframe.setAttribute("src", op + ".html");
+            }
+        }
+
+        function start() {
+            console.log("a");
+        }
+
+        window.addEventListener("load", start, false);
+    </script>
+</head>
+
+<body>
+    <h1>看星去!</h1>
+    <nav onclick="doClick('簡介')"><a href="#">簡介</a></nav>
+    <nav onclick="doClick('觀星地點')"><a href="#">觀星地點</a></nav>
+    <nav onclick="doClick('特殊日子')"><a href="#">特殊日子</a></nav>
+    <nav >星座認認看
+        <ul>
+            <li onclick="doClick('sp')"><a href="#">春</a></li>
+            <li onclick="doClick('sum')"><a href="#">夏</a></li>
+            <li onclick="doClick('aut')"><a href="#">秋</a></li>
+            <li onclick="doClick('win')"><a href="#">冬</a></li>
+        </ul>
+    </nav>
+    <nav onclick="doClick('相關資料')"><a href="#">相關資料</a></nav>
+    <iframe id="iframe" overflow="scroll" src="簡介.html" width="100%" height="700px"></iframe>
+</body>
+
+</html>

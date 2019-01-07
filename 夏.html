@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>夏</title>
+    <style type="text/CSS">
+        div {
+            text-align: center;
+        }
+
+        img {
+            height:500px;
+            background-image: url(caption.jpg);
+            background-repeat: no-repeat;
+        }
+    </style>
+    <script type="text/javascript">
+        var now;
+        var i = 0;
+        function Click(op) {
+            if(i>0){
+                document.getElementById(now).disabled = false;
+            }
+            document.getElementById(op).disabled = true;
+            if(op == "夏季大三角"){
+                document.getElementById("sum").setAttribute("src", op + ".jpg");
+            }else{
+                document.getElementById("sum").setAttribute("src", op + ".png");
+            }
+            now = op;
+            i=1;
+        }
+        window.addEventListener("load", start, false);
+    </script>
+</head>
+
+<body>
+    <div>
+        <img id="sum" src="sum.jpg"><br>
+        <input type="button" onclick="Click('天秤座')" id="天秤座" value="天秤座">
+        <input type="button" onclick="Click('天琴座')" id="天琴座" value="天琴座">
+        <input type="button" onclick="Click('天龍座')" id="天龍座" value="天龍座">
+        <input type="button" onclick="Click('天鵝座')" id="天鵝座" value="天鵝座">
+        <input type="button" onclick="Click('天蠍座')" id="天蠍座" value="天蠍座">
+        <input type="button" onclick="Click('天鷹座')" id="天鷹座" value="天鷹座">
+        <input type="button" onclick="Click('北冕座')" id="北冕座" value="北冕座">
+        <input type="button" onclick="Click('武仙座')" id="武仙座" value="武仙座">
+        <input type="button" onclick="Click('射手座')" id="射手座" value="射手座">
+        <input type="button" onclick="Click('海豚座')" id="海豚座" value="海豚座">
+        <input type="button" onclick="Click('夏季大三角')" id="夏季大三角" value="夏季大三角">
+        <p><a href="夏天認認看.html"><input id="replay" type="button" value="遊戲" style="width:100px"></a></p>
+    </div>
+</body>
+
+</html>

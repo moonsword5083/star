@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>秋天認認看</title>
+    <style type="text/CSS">
+        div{
+        text-align: center;
+        font-family:Microsoft JhengHei;
+        }
+        img{
+            width:15%;
+            height:220px;
+            background-image: url(caption.jpg);
+            background-repeat: no-repeat;
+        }
+        .red{
+            color: red;
+        }
+        input{
+            font-family:Microsoft JhengHei;
+        }
+    </style>
+    <script type="text/javascript">
+        var a = ["仙王座", "仙女座", "仙后座", "牡羊座", "南魚座", "英仙座", "飛馬座", "雙魚座", "寶瓶座", "魔羯座", "天鶴座", "三角座"];
+        var play = 0;
+        var now = [" ", " "];
+        var correct = 0;
+        function start() {
+            for (let i = 1; i < 12; i++) {
+                var j = Math.floor(Math.random() * i);
+                var tmp = a[i];
+                a[i] = a[j];
+                a[j] = tmp;
+            }
+            document.getElementById("pic").addEventListener("click", Click, false);
+            document.getElementById("button").addEventListener("click", check, false);
+        }
+
+        function Click(e) {
+            if (e.target.tagName.toLowerCase() == "img") {
+                if (e.target.alt == "" && play == 0) {
+                    play = 1;
+                    e.target.setAttribute("src", a[e.target.id] + ".png");
+                    e.target.setAttribute("alt", a[e.target.id]);
+                    now = [e.target.id, e.target.alt];
+                    document.getElementById("word").innerHTML = "";
+                } else if (e.target.alt != "") {
+                    document.getElementById("word").innerHTML = "已經選過了喔~~";
+                } else if (e.target.alt == "" && play == 1) {
+                    document.getElementById("word").innerHTML = "一次只能選一個喔~";
+                }
+            }
+        }
+
+        function check() {
+            var button = document.getElementById("星座").value;
+            var word = document.getElementById("word");
+            console.log(now);
+            if (now[0] == " ") {
+                word.innerHTML = "要先選卡片喔!";
+            } else if (now[1] == button) {
+                correct++;
+                if (correct == 12) {
+                    word.innerHTML = "全部答對了!真厲害!!";
+                    document.getElementById("applause").play();
+                    document.getElementById("replay").disabled = false;
+                } else {
+                    word.innerHTML = "答對了!!繼續努力~";
+                }
+                now = [" ", " "];
+            } else {
+                document.getElementById(now[0]).setAttribute("src", "卡片.jpg");
+                document.getElementById(now[0]).setAttribute("alt", "");
+                word.innerHTML = "答錯了...再想想看";
+                now = [" ", " "];
+            }
+            play = 0;
+        }
+        window.addEventListener("load", start, false);
+    </script>
+</head>
+
+<body>
+    <audio id="applause" preload="auto">
+        <source src="applause.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    <div id="pic">
+        <img id="0" src="卡片.jpg" alt="">
+        <img id="1" src="卡片.jpg" alt="">
+        <img id="2" src="卡片.jpg" alt="">
+        <img id="3" src="卡片.jpg" alt="">
+        <img id="4" src="卡片.jpg" alt="">
+        <img id="5" src="卡片.jpg" alt="">
+        <img id="6" src="卡片.jpg" alt="">
+        <img id="7" src="卡片.jpg" alt="">
+        <img id="8" src="卡片.jpg" alt="">
+        <img id="9" src="卡片.jpg" alt="">
+        <img id="10" src="卡片.jpg" alt="">
+        <img id="11" src="卡片.jpg" alt="">
+        <p>
+            <label>這個星座是:
+                <select id="星座">
+                    <option selected>星座</option>
+                    <option>仙王座</option>
+                    <option>仙女座</option>
+                    <option>仙后座</option>
+                    <option>牡羊座</option>
+                    <option>南魚座</option>
+                    <option>英仙座</option>
+                    <option>飛馬座</option>
+                    <option>雙魚座</option>
+                    <option>寶瓶座</option>
+                    <option>魔羯座</option>
+                    <option>天鶴座</option>
+                    <option>三角座</option>
+                </select>
+                &nbsp&nbsp
+            </label>
+            <input id="button" type="button" value="確定">
+            <input id="replay" type="button" onclick="location.reload()" disabled value="再玩一次">
+            <a href="秋.html"><input id="replay" type="button" value="回上一頁"></a>
+        </p>
+        <div id="word" class="red"></div>
+    </div>
+</body>
+
+</html>

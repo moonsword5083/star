@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>冬</title>
+    <style type="text/CSS">
+        div{
+        text-align: center;
+    }
+    img{
+        height:500px;
+        background-image: url(caption.jpg);
+        background-repeat: no-repeat;
+        margin-right: 20px;
+    }
+    </style>
+    <script type="text/javascript">
+        var now;
+        var i = 0;
+        function Click(op) {
+            if (i > 0) {
+                document.getElementById(now).disabled = false;
+            }
+            document.getElementById(op).disabled = true;
+            if(op == "冬季大三角"){
+                document.getElementById("win").setAttribute("src", op + ".jpg");
+            }else{
+                document.getElementById("win").setAttribute("src", op + ".png");
+            }
+            now = op;
+            i = 1;
+        }
+        window.addEventListener("load", start, false);
+    </script>
+</head>
+
+<body>
+    <div><img id="win" src="win.jpg"><br>
+        <input type="button" onclick="Click('大犬座')" id="大犬座" value="大犬座">
+        <input type="button" onclick="Click('小犬座')" id="小犬座" value="小犬座">
+        <input type="button" onclick="Click('天兔座')" id="天兔座" value="天兔座">
+        <input type="button" onclick="Click('天鴿座')" id="天鴿座" value="天鴿座">
+        <input type="button" onclick="Click('波江座')" id="波江座" value="波江座">
+        <input type="button" onclick="Click('金牛座')" id="金牛座" value="金牛座">
+        <input type="button" onclick="Click('御夫座')" id="御夫座" value="御夫座">
+        <input type="button" onclick="Click('獵戶座')" id="獵戶座" value="獵戶座">
+        <input type="button" onclick="Click('雙子座')" id="雙子座" value="雙子座">
+        <input type="button" onclick="Click('麒麟座')" id="麒麟座" value="麒麟座">
+        <input type="button" onclick="Click('冬季大三角')" id="冬季大三角" value="冬季大三角"><br>
+        <p><a href="冬天認認看.html"><input id="replay" type="button" value="遊戲" style="width:100px"></a></div>
+    </div>
+</body>
+
+</html>

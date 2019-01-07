@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>春</title>
+    <style type="text/CSS">
+        div {
+            text-align: center;
+        }
+        img {
+            height:500px;
+            background-image: url(caption.jpg);
+            background-repeat: no-repeat;
+        }
+    </style>
+    <script type="text/javascript">
+        var now;
+        var i = 0;
+        function Click(op) {
+            if(i>0){
+                document.getElementById(now).disabled = false;
+            }
+            document.getElementById(op).disabled = true;
+            if(op == "春季大三角"){
+                document.getElementById("sp").setAttribute("src", op + ".jpg");
+            }else{
+                document.getElementById("sp").setAttribute("src", op + ".png");
+            }
+            now = op;
+            i=1;
+        }
+        window.addEventListener("load", start, false);
+    </script>
+</head>
+
+<body>
+    <div >
+        <img class="back" id="sp" src="sp.jpg"><br>
+        <input type="button" onclick="Click('大熊座')" id="大熊座" value="大熊座">
+        <input type="button" onclick="Click('小熊座')" id="小熊座" value="小熊座">
+        <input type="button" onclick="Click('巨爵座')" id="巨爵座" value="巨爵座">
+        <input type="button" onclick="Click('巨蟹座')" id="巨蟹座" value="巨蟹座">
+        <input type="button" onclick="Click('后髮座')" id="后髮座" value="后髮座">
+        <input type="button" onclick="Click('牧夫座')" id="牧夫座" value="牧夫座">
+        <input type="button" onclick="Click('長蛇座')" id="長蛇座" value="長蛇座">
+        <input type="button" onclick="Click('烏鴉座')" id="烏鴉座" value="烏鴉座">
+        <input type="button" onclick="Click('處女座')" id="處女座" value="處女座">
+        <input type="button" onclick="Click('獅子座')" id="獅子座" value="獅子座">
+        <input type="button" onclick="Click('春季大三角')" id="春季大三角" value="春季大三角">
+        <p><a href="春天認認看.html"><input id="replay" type="button" value="遊戲" style="width:100px"></a></p>
+        </div>
+</body>
+
+</html>

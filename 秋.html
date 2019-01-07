@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>秋</title>
+    <style type="text/CSS">
+        div{
+        text-align: center;
+    }
+    img{
+        height:500px;
+        background-image: url(caption.jpg);
+        background-repeat: no-repeat;
+    }
+    </style>
+    <script type="text/javascript">
+        var now;
+        var i = 0;
+        function Click(op) {
+            if(i>0){
+                document.getElementById(now).disabled = false;
+            }
+            document.getElementById(op).disabled = true;
+            if(op == "秋季四邊形"){
+                document.getElementById("aut").setAttribute("src", op + ".jpg");
+            }else{
+                document.getElementById("aut").setAttribute("src", op + ".png");
+            }
+            now = op;
+            i=1;
+        }
+        window.addEventListener("load", start, false);
+    </script>
+</head>
+
+<body>
+    <div><img id="aut" src="aut.jpg"><br>
+        <input type="button" onclick="Click('仙王座')" id="仙王座" value="仙王座">
+        <input type="button" onclick="Click('仙女座')" id="仙女座" value="仙女座">
+        <input type="button" onclick="Click('仙后座')" id="仙后座" value="仙后座">
+        <input type="button" onclick="Click('牡羊座')" id="牡羊座" value="牡羊座">
+        <input type="button" onclick="Click('南魚座')" id="南魚座" value="南魚座">
+        <input type="button" onclick="Click('英仙座')" id="英仙座" value="英仙座">
+        <input type="button" onclick="Click('飛馬座')" id="飛馬座" value="飛馬座">
+        <input type="button" onclick="Click('雙魚座')" id="雙魚座" value="雙魚座">
+        <input type="button" onclick="Click('寶瓶座')" id="寶瓶座" value="寶瓶座">
+        <input type="button" onclick="Click('魔羯座')" id="魔羯座" value="魔羯座">
+        <input type="button" onclick="Click('天鶴座')" id="天鶴座" value="天鶴座">
+        <input type="button" onclick="Click('三角座')" id="三角座" value="三角座">
+        <input type="button" onclick="Click('秋季四邊形')" id="秋季四邊形" value="秋季四邊形">
+        <p><a href="秋天認認看.html"><input id="replay" type="button" value="遊戲" style="width:100px"></a></p>
+    </div>
+</body>
+
+</html>
