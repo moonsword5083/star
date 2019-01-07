@@ -17,25 +17,7 @@
         var i = 0;
         function Click() {
             if (document.getElementById("觀星地點").value != "觀星地點") {
-                if (i == 0) {
-                    var node = document.createElement("iframe");
-                    var div = document.createElement("div");
-                    document.getElementById("p").removeChild(document.getElementById("pic"));
-                    div.setAttribute("id","d");
-                    node.setAttribute("id", "map");
-                    node.setAttribute("width", "75%");
-                    node.setAttribute("height", "500px");
-                    node.setAttribute("frameborder", "0");
-                    node.setAttribute("src", "http://maps.google.com.tw/maps?f=q&hl=zh-TW&geocode=&q=" + document.getElementById("觀星地點").value + "&z=16&output=embed&t=");
-                    node.setAttribute("style", "border:0");
-                    node.setAttribute("allowfullscreen", "true");
-                    document.getElementById("B").appendChild(div);
-                    document.getElementById("d").appendChild(node);
-                    i = 1;
-                }
-                if (i == 1) {
-                    document.getElementById("map").setAttribute("src","http://maps.google.com.tw/maps?f=q&hl=zh-TW&geocode=&q=" + document.getElementById("觀星地點").value + "&z=16&output=embed&t=");
-                }  
+                document.getElementById("web").setAttribute("href","五分山砲台.html");
             }
         }
         window.addEventListener("load", start, false);
@@ -64,6 +46,7 @@
                 <option>南澳溪神秘海灘</option>
             </select>
         </label>
+        <a href="" id="web"><input id="button" type="button" value="確認"></a>
     </p>
     <p id="p"><img src="地點.gif" id="pic"></p>
 </body>
