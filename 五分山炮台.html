@@ -1,0 +1,45 @@
+﻿<html>
+<head>
+    <meta charset="utf-8">
+    <title>五分山炮台</title>
+    <style type="text/css">
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script type="text/javascript">
+
+  
+    var map;
+    var myLatLng = { lat:25.072468, lng:  121.781111 };
+
+    function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: myLatLng,
+            zoom: 15
+        });
+
+        var marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            title: '這是總統府'
+        });
+
+        marker.setMap(map);
+    }
+
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnHkF8R_Oip915XPvvBfOWv9ikwPyRCgI&callback=initMap">
+    </script>
+</body>
+</html>
