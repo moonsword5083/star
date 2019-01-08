@@ -18,6 +18,8 @@
         function Click() {
             if (document.getElementById("觀星地點").value != "觀星地點") {
                 if (i == 0) {
+                    var web = document.createElement("p");
+                    var word = document.createTextNode("https://www.google.com.tw/maps/");
                     var node = document.createElement("iframe");
                     var div = document.createElement("div");
                     document.getElementById("p").removeChild(document.getElementById("pic"));
@@ -29,8 +31,10 @@
                     node.setAttribute("src", "http://maps.google.com.tw/maps?f=q&hl=zh-TW&geocode=&q=" + document.getElementById("觀星地點").value + "&z=16&output=embed&t=");
                     node.setAttribute("style", "border:0");
                     node.setAttribute("allowfullscreen", "true");
+                    web.appendChild(word);
                     document.getElementById("B").appendChild(div);
-                    document.getElementById("d").appendChild(node);
+                    div.appendChild(node);
+                    div.appendChild(web);
                     i = 1;
                 }
                 if (i == 1) {
