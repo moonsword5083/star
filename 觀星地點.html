@@ -28,7 +28,7 @@
                     node.setAttribute("width", "75%");
                     node.setAttribute("height", "500px");
                     node.setAttribute("frameborder", "0");
-                    node.setAttribute("src", "http://maps.google.com.tw/maps?f=q&hl=zh-TW&geocode=&q=" + document.getElementById("觀星地點").value + "&z=16&output=embed&t=");
+                    node.setAttribute("src", "https://www.google.com/maps/embed/v1/place?key=AIzaSyDiSR1a5ToR51ztwxg7mfUYHmDH-bzx_c8&q=" + document.getElementById("觀星地點").value);
                     node.setAttribute("style", "border:0");
                     node.setAttribute("allowfullscreen", "true");
                     web.appendChild(word);
@@ -38,7 +38,7 @@
                     i = 1;
                 }
                 if (i == 1) {
-                    document.getElementById("map").setAttribute("src","http://maps.google.com.tw/maps?f=q&hl=zh-TW&geocode=&q=" + document.getElementById("觀星地點").value + "&z=16&output=embed&t=");
+                    document.getElementById("map").setAttribute("src","https://www.google.com/maps/embed/v1/place?key=AIzaSyDiSR1a5ToR51ztwxg7mfUYHmDH-bzx_c8&q=" + document.getElementById("觀星地點").value);
                 }  
             }
         }
